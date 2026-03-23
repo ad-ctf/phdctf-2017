@@ -2,7 +2,7 @@ version: "3"
 
 services:
     fridge-db:
-        image: postgres
+        image: postgres:17
         volumes:
             - ./volumes/db:/var/lib/postgresql/data
         env_file:
@@ -48,4 +48,3 @@ services:
             - "9595:9595"
         restart: on-failure
         container_name: fridge-api
-
