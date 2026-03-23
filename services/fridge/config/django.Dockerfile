@@ -1,9 +1,11 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 MAINTAINER andgein@yandex.ru
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update
-RUN apt-get install -y python3 python3-pip uwsgi uwsgi-plugin-python3 postgresql-client
+RUN apt-get install -y python3 python3-pip uwsgi uwsgi-plugin-python3 postgresql-client libpq-dev
 
 # Install application requirements
 ADD ./web/requirements.txt /

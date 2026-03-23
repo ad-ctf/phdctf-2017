@@ -1,0 +1,9 @@
+services:
+  fridge:
+    name: Fridge
+    checker:
+      basedir: ./checkers/fridge
+      script: ./fridge.checker.py
+      setup: python3 -m pip install --break-system-packages -r requirements.txt
+    vuln:
+      basedir: ./services/fridge
